@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pile_id: 1
+  image_url: MyString
+  value: MyString
+  suit: MyString
+  code: MyString
+  points: 1
+
+two:
+  pile_id: 1
+  image_url: MyString
+  value: MyString
+  suit: MyString
+  code: MyString
+  points: 1
