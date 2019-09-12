@@ -7,6 +7,7 @@ class CreateCards < ActiveRecord::Migration[5.2]
       t.string :suit
       t.string :code
       t.integer :points
+      t.integer :position
 
       t.timestamps
     end

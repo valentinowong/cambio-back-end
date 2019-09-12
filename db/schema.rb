@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_12_030534) do
+ActiveRecord::Schema.define(version: 2019_09_12_020346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,23 +22,23 @@ ActiveRecord::Schema.define(version: 2019_09_12_030534) do
     t.string "suit"
     t.string "code"
     t.integer "points"
+    t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "position"
   end
 
   create_table "game_players", force: :cascade do |t|
     t.integer "player_id"
     t.integer "game_id"
-    t.boolean "status"
-    t.boolean "current_turn"
+    t.boolean "status", default: false
+    t.boolean "current_turn", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "games", force: :cascade do |t|
-    t.string "status"
-    t.integer "phase"
+    t.string "status", default: "Not Started"
+    t.integer "phase", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(version: 2019_09_12_030534) do
   create_table "piles", force: :cascade do |t|
     t.integer "game_id"
     t.string "name"
+    t.integer "game_player_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "game_player_id"
   end
 
   create_table "players", force: :cascade do |t|
