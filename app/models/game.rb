@@ -27,4 +27,8 @@ class Game < ApplicationRecord
         self.cards
     end
 
+    def self.all_sorted_newest_to_oldest
+        Game.all.sort_by { |game| game.created_at }.reverse
+    end
+
 end

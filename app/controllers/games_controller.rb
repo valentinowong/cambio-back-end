@@ -1,8 +1,8 @@
 class GamesController < ApplicationController
 
     def index
-        games = Game.all
-        render json: games
+        games = Game.all_sorted_newest_to_oldest
+        render json: games, include: [:players]
     end
 
     def show
